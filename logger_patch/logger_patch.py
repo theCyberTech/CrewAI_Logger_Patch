@@ -4,7 +4,6 @@ import importlib
 
 def apply_monkey_patch():
     from crewai.utilities import Logger
-    from langchain_core.callbacks.stdout import StdOutCallbackHandler
 
     # Subclass Logger to add timestamp functionality
     class LoggerWithTimestamp(Logger):
