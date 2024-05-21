@@ -38,9 +38,6 @@ jobs:
         path: dist/
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-        # No need for an API token when using OIDC
-        package_name: your-project-name  # Replace with your actual project name if needed
 
   github-release:
     name: Sign the Python distribution with Sigstore and upload them to GitHub Release
