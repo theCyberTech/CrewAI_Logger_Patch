@@ -5,12 +5,10 @@ setup(
     version='0.1',
     author='theCyberTech',
     author_email='the_t3ch@pm.me',
-    packages=find_packages(),
-    install_requires=[
-        'crewai',
-        # other dependencies
-    ],
+    packages=find_packages(include=['logger_patch', 'logger_patch.*']),
+    install_requires=[],
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     license="MIT",
+    url="https://github.com/theCyberTech/CrewAI_Logger_Patch"
 )
