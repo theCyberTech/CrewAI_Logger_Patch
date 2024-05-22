@@ -49,7 +49,6 @@ try:
         output_file='research_result.txt',
     )
 
-    research_task._logger = crewai.utilities.Logger(verbose_level=research_task)
 
     # Create the crew
     crew = Crew(
