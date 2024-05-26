@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='crewai_logging_patch',
-    version='0.4',
+    version='0.5',
     author='theCyberTech',
     author_email='the_t3ch@pm.me',
     packages=find_packages(include=['logger_patch', 'logger_patch.*']),
