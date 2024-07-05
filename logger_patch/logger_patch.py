@@ -22,6 +22,7 @@ def apply_monkey_patch():
 
 # Apply the monkey patch before any other imports or code execution
 def initialize_patch():
+    # import crewai here
     import crewai
     apply_monkey_patch()
     importlib.reload(crewai)
