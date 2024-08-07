@@ -1,0 +1,44 @@
+# This YAML file configures the discussion categories for your repository.
+# For more information, see https://docs.github.com/en/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository
+
+version: 1
+categories:
+  - name: Announcements
+    description: Important updates and announcements from the maintainers
+    emoji: 📢
+
+  - name: General
+    description: General discussion about the project
+    emoji: 💬
+
+  - name: Ideas
+    description: Share ideas for new features or improvements
+    emoji: 💡
+
+  - name: Q&A
+    description: Ask and answer questions about the project
+    emoji: ❓
+
+  - name: Show and Tell
+    description: Share your projects or use cases built with our project
+    emoji: 🎉
+
+  - name: Help Wanted
+    description: Requests for assistance from the community
+    emoji: 🆘
+
+# You can add more custom categories below
+
+  - name: Bugs
+    description: Report bugs and issues you've encountered
+    emoji: 🐛
+
+  - name: Feature Requests
+    description: Suggest new features or enhancements
+    emoji: 🚀
+
+# The following configuration sets the default category for new discussions
+default: General
+
+# This setting allows maintainers to change categories (true) or restricts it to repository collaborators (false)
+maintainers_can_change_categories: true
