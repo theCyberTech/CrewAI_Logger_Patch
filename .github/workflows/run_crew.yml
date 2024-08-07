@@ -27,7 +27,7 @@ jobs:
     - name: Run CrewAI script
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      run: python .github/workflows/run_crew.py
+      run: python .github/run_crew.py
 
     - name: Commit and push if changes
       run: |
