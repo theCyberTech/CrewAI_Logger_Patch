@@ -33,7 +33,11 @@ def run_crew():
     
     # Write result to a file
     with open('ai_summary.md', 'w') as f:
-        f.write(result)
+        # Check if result is a CrewOutput object
+        if hasattr(result, 'final_output'):
+            f.write(result.final_output)
+        else:
+            f.write(str(result))
 
 if __name__ == "__main__":
     run_crew()
