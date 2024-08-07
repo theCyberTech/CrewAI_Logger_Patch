@@ -1,9 +1,11 @@
 name: Run AI Crew
 
 on:
+  schedule:
+    - cron: '*/5 * * * *'
   push:
-    branches: [ main ]
-  workflow_dispatch:  # Allows manual triggering
+    branches: [ main ]  # This line specifies the branch
+  workflow_dispatch:  # Keeps manual trigger option
 
 jobs:
   run-crew:
