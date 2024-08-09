@@ -1,0 +1,23 @@
+name: Package Docs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  create-docs-package:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Create Docs Tarball
+      run: tar -czvf docs.tar.gz .
+
+    - name: Upload Docs Package
+      uses: actions/upload-artifact@v4
+      with:
+        name: docs-package
+        path: docs.tar.gz
