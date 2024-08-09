@@ -1,9 +1,7 @@
-name: Package Docs
+name: Package and Release Docs
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
   workflow_dispatch:
 
@@ -16,8 +14,23 @@ jobs:
     - name: Create Docs Tarball
       run: tar -czvf docs.tar.gz logger_patch/
 
-    - name: Upload Docs Package
-      uses: actions/upload-artifact@v4
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: docs-package
-        path: docs.tar.gz
+        tag_name: docs-${{ github.sha }}
+        release_name: Documentation Package ${{ github.sha }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v4
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./docs.tar.gz
+        asset_name: docs.tar.gz
+        asset_content_type: application/gzip
